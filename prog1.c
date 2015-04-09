@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #define clrscr() system("clear")
 int* cargar(int* U,int* conj);
@@ -135,4 +135,5 @@ void uni(int * conj1, int * conj2)
 void card (int * conj)
 {
 //This is a comment
+//This is of user121
 }
