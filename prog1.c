@@ -1,4 +1,5 @@
-﻿#include <stdio.h>
+﻿//estructura discretas
+#include <stdio.h>
 #include <stdlib.h>
 #define clrscr() system("clear")
 int* cargar(int* U,int* conj);
