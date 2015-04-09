@@ -1,5 +1,6 @@
 ﻿//estructura discretas
 //Codigo agregado por otro usuario.
+//other commit
 #include <stdio.h>
 #include <stdlib.h>
 //#define clrscr() system("clear")
