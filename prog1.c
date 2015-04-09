@@ -1,4 +1,5 @@
 ﻿//estructura discretas
+//Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
 #define clrscr() system("clear")
