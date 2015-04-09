@@ -2,7 +2,7 @@
 //Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
-#define clrscr() system("clear")
+//#define clrscr() system("clear")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
@@ -13,11 +13,11 @@ int i;
 int main()
 {
     int* U=malloc(inn*sizeof(int));
-    for(i=0;i<inn;i++) //{a,b,c,d,e,f,g} //{0,1,2,3,4,5,6,7,8,9}
-	U[i]=1;
     int* A=malloc(inn*sizeof(int));
     int* B=malloc(inn*sizeof(int));
     clrscr();
+    for(i=0;i<inn;i++) //{a,b,c,d,e,f,g} //{0,1,2,3,4,5,6,7,8,9}
+	U[i]=1;
     printf("Cargando el Conjunto A\n");
     A=cargar(U,A);
     imprimir(A);
