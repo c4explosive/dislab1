@@ -1,6 +1,10 @@
 ﻿//Codigo agregado por otro usuario.
 //other commit
+<<<<<<< HEAD
 //Nuevo codigo aqui
+=======
+#include <conio.h>
+>>>>>>> 091634574e70a1f326b0b580d36f953f567bf3e3
 #include <stdio.h>
 #include <stdlib.h>
 //#define clrscr() system("clear")

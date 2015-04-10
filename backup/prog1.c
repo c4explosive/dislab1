@@ -1,9 +1,7 @@
-﻿//Codigo agregado por otro usuario.
-//other commit
-//Nuevo codigo aqui
+﻿//estructura discretas
 #include <stdio.h>
 #include <stdlib.h>
-//#define clrscr() system("clear")
+#define clrscr() system("clear")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
@@ -14,11 +12,11 @@ int i;
 int main()
 {
     int* U=malloc(inn*sizeof(int));
+    for(i=0;i<inn;i++) //{a,b,c,d,e,f,g} //{0,1,2,3,4,5,6,7,8,9}
+	U[i]=1;
     int* A=malloc(inn*sizeof(int));
     int* B=malloc(inn*sizeof(int));
     clrscr();
-    for(i=0;i<inn;i++) //{a,b,c,d,e,f,g} //{0,1,2,3,4,5,6,7,8,9}
-	U[i]=1;
     printf("Cargando el Conjunto A\n");
     A=cargar(U,A);
     imprimir(A);
@@ -34,7 +32,6 @@ int * cargar(int * U,int* conj) //Ver como se trabaja con U. FIXME: U no es usad
     int j;
     char * numero=malloc(sizeof(char));
     char * res=malloc(sizeof(char));
-    U[0]=1;
     for (i=0;i<inn;i++)
     {
 	conj[i]=0;
@@ -135,4 +132,11 @@ void uni(int * conj1, int * conj2)
         }
     }
     imprimir(unio);
+}
+void card (int * conj)
+{
+//This is a comment
+//This is of user121
+//This is my comment
+//new
 }

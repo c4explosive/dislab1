@@ -1,14 +1,15 @@
-﻿//Codigo agregado por otro usuario.
-//other commit
-//Nuevo codigo aqui
+//estructura discretas
+//Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
-//#define clrscr() system("clear")
+#define clrscr() system("clear")
+#define getch() system("echo ")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
 void impe(int * conj);
 void card(int * conj);
+void inter(int *r, int *t);
 int i;
 #define inn 10
 int main()
@@ -27,6 +28,8 @@ int main()
     imprimir(A);
     imprimir(B);
     uni(A,B);
+    inter(A,B);
+
     return 0;
 }
 int * cargar(int * U,int* conj) //Ver como se trabaja con U. FIXME: U no es usado...
@@ -41,7 +44,7 @@ int * cargar(int * U,int* conj) //Ver como se trabaja con U. FIXME: U no es usad
     }
     do
     {
-        do
+	do
 	{
 	    printf("Ingrese un elemento (Del 0 al 9): ");
 	    scanf("%s",numero);
@@ -50,8 +53,8 @@ int * cargar(int * U,int* conj) //Ver como se trabaja con U. FIXME: U no es usad
 	conj[j]=1;
 	impe(conj);
 	printf("\nContinuar ingresando (S/n/b (para borrar el ultimo ingresado)): "); //Opción borrar por si hay equivocaciones. Como un char. Bug as feature xD.
-	scanf("%s",res); //Se está leyendo con string, porque char causa problemas. 
-        if (res[0]=='b' || res[0]=='B')
+	scanf("%s",res); //Se está leyendo con string, porque char causa problemas.
+	if (res[0]=='b' || res[0]=='B')
 	{
 	    conj[j]=0;
 	    printf("Elemento Borrado: %d\n",j);//FIXME: No debería leer de nuevo un elemento, debería preguntar si continuar ingresando.
@@ -69,7 +72,7 @@ void imprimir(int * conj) //TODO: Esto se quitará en un futuro, no debemos impr
 	    emp=1;
 	else
 	{
-	    emp=0;	
+	    emp=0;
 	    break;
 	}
     }
@@ -77,12 +80,12 @@ void imprimir(int * conj) //TODO: Esto se quitará en un futuro, no debemos impr
 	printf("{}\n");
     else
     {
-    	printf("{");
-    	for(i=0;i<inn;i++)
-    	{
+	printf("{");
+	for(i=0;i<inn;i++)
+	{
 	    printf("%d,",conj[i]);
-    	}
-    	printf("\b}\n");
+	}
+	printf("\b}\n");
     }
     printf("==============================\n");
     impe(conj);
@@ -97,25 +100,26 @@ void impe(int * conj)
 	    emp=1;
 	else
 	{
-	    emp=0;	
+	    emp=0;
 	    break;
-	}	
+	}
     }
     if (emp == 1)
 	printf("{}\n");
     else
     {
-    	printf("{");
-    	for(i=0;i<inn;i++)
-    	{
-    	    if (conj[i] == 1)
+	printf("{");
+	for(i=0;i<inn;i++)
+	{
+	    if (conj[i] == 1)
 	    {
-	    	printf("%d,",i);
+		printf("%d,",i);
 	    }
-    	}
-    	printf("\b}\n");
+	}
+	printf("\b}\n");
     }
-} 
+    card(conj);
+}
 void uni(int * conj1, int * conj2)
 {
     int* unio=malloc(inn*sizeof(int));
@@ -126,13 +130,57 @@ void uni(int * conj1, int * conj2)
     for (i=0;i<inn;i++)
     {
 	if ( unio[i]== 0)
-        {
+	{
 	    unio[i]=conj1[i];
 	}
-        if (unio[i]==0)
-        {
+	if (unio[i]==0)
+	{
 	    unio[i]=conj2[i];
-        }
+	}
     }
     imprimir(unio);
+}
+
+void inter(int *r,int *t)
+{
+	int m=0;
+	int* unio=malloc(inn*sizeof(int));
+	printf("La interseccion es: \n");
+	for(i=0;i<inn;i++)
+	{
+	for(m=0;m<inn;m++)
+	{
+	unio[i]=0;
+	unio[m]=0;
+	}
+	}
+	for(i=0;i<inn;i++)
+	{
+		for(m=0;m<inn;m++)
+		{
+			if(r[i]==t[m])
+			{
+			unio[i]=r[i];
+
+			}
+			if(r[i]==t[m])
+			{
+			unio[m]=r[i];
+			}
+		}
+	}
+	 imprimir(unio);
+	 getch();
+}
+void card(int * conj)
+{
+    int count=0;
+    for (i=0;i<inn;i++)
+    {
+	if(conj[i] == 1)
+	{
+	    count++;
+	}
+    }
+    printf("La cardinalidad es de %d\n",count);
 }
