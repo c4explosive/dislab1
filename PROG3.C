@@ -1,9 +1,15 @@
-﻿//estructura discretas
+//estructura discretas
 //Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
 //#define clrscr() system("clear")
+<<<<<<< HEAD:PROG3.C
 
+=======
+//#define clrscr() system("clear")
+//#define getch() system("echo ")
+//que pasa que no sincroniza
+>>>>>>> 367f551b926603f32313599174b0e087c22eb361:PROG2.c
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
