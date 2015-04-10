@@ -1,4 +1,4 @@
-//estructura discretas
+﻿//estructura discretas
 //Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
@@ -146,23 +146,24 @@ void uni(int * conj1, int * conj2)
 
 void inter(int *r,int *t)
 {
-
+	
 	int* unio=malloc(inn*sizeof(int));
 	printf("La interseccion es: \n");
 	for(i=0;i<inn;i++)
 	{
+	
 	unio[i]=0;
+	
 	}
 	for(i=0;i<inn;i++)
 	{
-
 			if(r[i]==t[i])
 			{
 			unio[i]=r[i];
 
 			}
-
-
+		       
+		
 	}
 	 imprimir(unio);
 	 getch();
