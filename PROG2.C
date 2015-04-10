@@ -144,23 +144,31 @@ void uni(int * conj1, int * conj2)
 
 void inter(int *r,int *t)
 {
-
+	int m=0;
 	int* unio=malloc(inn*sizeof(int));
 	printf("La interseccion es: \n");
 	for(i=0;i<inn;i++)
 	{
+	for(m=0;m<inn;m++)
+	{
 	unio[i]=0;
+	unio[m]=0;
+	}
 	}
 	for(i=0;i<inn;i++)
 	{
-
-			if(r[i]==t[i])
+		for(m=0;m<inn;m++)
+		{
+			if(r[i]==t[m])
 			{
 			unio[i]=r[i];
 
 			}
-
-
+		       if(t[m]==r[i])
+			{
+			unio[m]=r[i];
+			}
+		}
 	}
 	 imprimir(unio);
 	 getch();
