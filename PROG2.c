@@ -3,6 +3,7 @@
 #include <conio.h>
 //#define clrscr() system("clear")
 //#define getch() system("echo ")
+//ok
 int* cargar(int* U,int* conj);
 void menup ();
 void menuop ();
