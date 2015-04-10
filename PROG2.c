@@ -3,7 +3,7 @@
 #include <conio.h>
 //#define clrscr() system("clear")
 //#define getch() system("echo ")
-//ok
+//que pasa que no sincroniza
 int* cargar(int* U,int* conj);
 void menup ();
 void menuop ();
