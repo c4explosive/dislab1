@@ -10,6 +10,7 @@ void uni(int * conj1, int * conj2);
 void impe(int * conj);
 void card(int * conj);
 void inter(int *r, int *t);
+void relativo(int *e, int *s);
 int i;
 #define inn 10
 int main()
@@ -29,6 +30,7 @@ int main()
     imprimir(B);
     uni(A,B);
     inter(A,B);
+    relativo(A,B);
 
     return 0;
 }
@@ -162,7 +164,7 @@ void inter(int *r,int *t)
 			unio[i]=r[i];
 
 			}
-			if(r[i]==t[m])
+		       if(t[m]==r[i])
 			{
 			unio[m]=r[i];
 			}
@@ -170,4 +172,29 @@ void inter(int *r,int *t)
 	}
 	 imprimir(unio);
 	 getch();
+}
+void relativo(int *e, int *s)
+{
+  int m=0;
+  int* unio=malloc(inn*sizeof(int));
+  printf("A-B\n");
+  for(i=0;i<inn;i++)
+     {
+       for(m=0;m<inn;m++)
+       {
+       unio[i]=0;
+       unio[m]=0;
+       }
+      }
+      for(i=0;i<inn;i++)
+      {
+
+       if (e[i]!=s[i])
+       {
+       unio[i]=e[i];
+       }
+       }
+
+       imprimir(unio);
+       getch();
 }
