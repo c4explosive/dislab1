@@ -1,15 +1,17 @@
-//estructura discretas
+﻿//estructura discretas
 //Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
-#define clrscr() system("clear")
-#define getch() system("echo ")
+//#define clrscr() system("clear")
+//#define clrscr() system("clear")
+//#define getch() system("echo ")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
 void impe(int * conj);
 void card(int * conj);
 void inter(int *r, int *t);
+void relativo(int *e, int *s);
 int i;
 #define inn 10
 int main()
@@ -29,6 +31,7 @@ int main()
     imprimir(B);
     uni(A,B);
     inter(A,B);
+    relativo(A,B);
 
     return 0;
 }
@@ -143,44 +146,63 @@ void uni(int * conj1, int * conj2)
 
 void inter(int *r,int *t)
 {
-	int m=0;
+	
 	int* unio=malloc(inn*sizeof(int));
 	printf("La interseccion es: \n");
 	for(i=0;i<inn;i++)
 	{
-	for(m=0;m<inn;m++)
-	{
+	
 	unio[i]=0;
-	unio[m]=0;
-	}
+	
 	}
 	for(i=0;i<inn;i++)
 	{
-		for(m=0;m<inn;m++)
-		{
-			if(r[i]==t[m])
+			if(r[i]==t[i])
 			{
 			unio[i]=r[i];
 
 			}
-			if(r[i]==t[m])
-			{
-			unio[m]=r[i];
-			}
-		}
+		       
+		
 	}
 	 imprimir(unio);
 	 getch();
+}
+void relativo(int *e, int *s)
+{
+  int m=0;
+  int* unio=malloc(inn*sizeof(int));
+  printf("A-B\n");
+  for(i=0;i<inn;i++)
+     {
+       for(m=0;m<inn;m++)
+       {
+       unio[i]=0;
+       unio[m]=0;
+       }
+      }
+      for(i=0;i<inn;i++)
+      {
+
+       if (e[i]!=s[i])
+       {
+       unio[i]=e[i];
+       }
+       }
+
+       imprimir(unio);
+       getch();
 }
 void card(int * conj)
 {
     int count=0;
     for (i=0;i<inn;i++)
     {
-	if(conj[i] == 1)
-	{
-	    count++;
-	}
+        if(conj[i] == 1)
+        {
+            count++;
+        }
     }
     printf("La cardinalidad es de %d\n",count);
 }
+          
