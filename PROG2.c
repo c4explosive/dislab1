@@ -2,8 +2,8 @@
 //Codigo agregado por otro usuario.
 #include <stdio.h>
 #include <stdlib.h>
-//#define clrscr() system("clear")
-//#define getch() system("echo ")
+#define clrscr() system("clear")
+#define getch() system("echo ")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
