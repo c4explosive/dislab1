@@ -5,6 +5,7 @@
 //#define clrscr() system("clear")
 //#define clrscr() system("clear")
 //#define getch() system("echo ")
+//ok
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
