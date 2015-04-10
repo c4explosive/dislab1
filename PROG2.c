@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#define clrscr() system("clear")
-
+//#define clrscr() system("clear")
+//#define getch() system("echo ")
 int* cargar(int* U,int* conj);
 void imprimir(int * conj);
 void uni(int * conj1, int * conj2);
@@ -120,6 +121,7 @@ void impe(int * conj)
 	}
 	printf("\b}\n");
     }
+    card(conj);
 }
 void uni(int * conj1, int * conj2)
 {
@@ -190,3 +192,16 @@ void relativo(int *e, int *s)
        imprimir(unio);
        getch();
 }
+void card(int * conj)
+{
+    int count=0;
+    for (i=0;i<inn;i++)
+    {
+        if(conj[i] == 1)
+        {
+            count++;
+        }
+    }
+    printf("La cardinalidad es de %d\n",count);
+}
+          
