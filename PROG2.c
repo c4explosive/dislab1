@@ -118,6 +118,7 @@ void impe(int * conj)
 	}
 	printf("\b}\n");
     }
+    card(conj);
 }
 void uni(int * conj1, int * conj2)
 {
@@ -170,4 +171,16 @@ void inter(int *r,int *t)
 	}
 	 imprimir(unio);
 	 getch();
+}
+void card(int * conj)
+{
+    int count=0;
+    for (i=0;i<inn;i++)
+    {
+	if(conj[i] == 1)
+	{
+	    count++;
+	}
+    }
+    printf("La cardinalidad es de %d\n",count);
 }
