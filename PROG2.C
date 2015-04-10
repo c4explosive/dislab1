@@ -142,7 +142,7 @@ void uni(int * conj1, int * conj2)
     imprimir(unio);
 }
 
-void inter(int *r,int *t)
+void inter(int *r,int *t)//1 indice
 {
 	
 	int* unio=malloc(inn*sizeof(int));
